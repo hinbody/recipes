@@ -1,5 +1,10 @@
 <h2>New Recipe</h2>
 <%= form_for(@recipe) do |f| %>
+  <ul>
+    <% @recipe.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+  </ul>
   <p>
     <%= f.label :name, "Recipe Name" %><br />
     <%= f.text_field :name %>
